@@ -1,4 +1,5 @@
 package com.chisko.bcgdvtest.base
 
-class BaseCallback {
+interface BaseCallback {
+    fun error(cause: Exception)
 }
