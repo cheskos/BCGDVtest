@@ -1,23 +1,15 @@
 package com.chisko.bcgdvtest.model
 
 
-data class RestaurantModel(
+data class RestaurantModel (
         val name: String,
-        var days: arrayListOf<>,
-        var hours: String
+        var schedule: String
 ) {
-}
+    init {
+        val dates = schedule.split("/")
+        for (value: String in dates) {
 
-enum class WeekDay(name: String) {
-    MONDAY("MON"),
-    TUESDAY("TUE0"),
-    WEDNESDAY("WED"),
-    THURSDAY("THU"),
-    FRIDAY("FRI"),
-    SATURDAY("SAT"),
-    SUNDAY("SUN");
-
-    override fun toString(): String {
-        return name
+        }
     }
 }
+

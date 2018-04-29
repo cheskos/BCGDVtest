@@ -2,6 +2,8 @@ package com.chisko.bcgdvtest.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import butterknife.ButterKnife
+import com.chisko.bcgdvtest.BCGDVTestAppComponent
 import com.chisko.bcgdvtest.app
 
 abstract class BaseActivity: AppCompatActivity() {
@@ -14,6 +16,8 @@ abstract class BaseActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(getLayout())
+
+        ButterKnife.bind(this)
 
         setupComponent(app.component)
     }

@@ -2,29 +2,30 @@
 
 ext {
     // Sdk and tools
-    minSdkVersion = 15
-    targetSdkVersion = 26
-    compileSdkVersion = 26
-    buildToolsVersion = '26.0.2'
-    AAVersion = '4.5.0-SNAPSHOT'
+    minSdkVersion = 21
+    targetSdkVersion = 27
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.3'
+    AVersion = '4.5.0-SNAPSHOT'
 
     // App dependencies
-    supportLibraryVersion = '26.1.0'
+    supportLibraryVersion = '27.1.1'
     daggerVersion = '2.11'
     junitVersion = '4.12'
     mockitoVersion = '2.8.47'
-    hamcrestVersion = '1.3'
-    runnerVersion = '1.0.1'
-    rulesVersion = '1.0.1'
-    espressoVersion = '3.0.1'
-    roomVersion = "1.0.0"
-    mockitoVersion = '1.10.19'
-    runnerVersion = '0.5'
-    powerMockito = '1.6.2'
+    butterKnifeVersion = '8.1.0'
+//    hamcrestVersion = '1.3'
+//    runnerVersion = '1.0.1'
+//    rulesVersion = '1.0.1'
+//    espressoVersion = '3.0.1'
+//    roomVersion = "1.0.0"
+//    mockitoVersion = '1.10.19'
+//    runnerVersion = '0.5'
+//    powerMockito = '1.6.2'
 }
 
 buildscript {
-    ext.kotlin_version = '1.2.40'
+    ext.kotlin_version = '1.2.41'
     repositories {
         google()
         jcenter()

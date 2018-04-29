@@ -20,7 +20,7 @@ class BCGDVTestApp : Application() {
     }
 
     @Singleton @dagger.Module
-    internal class Module(val app: BCGDVTestApp) {
+    internal class Module(private val app: BCGDVTestApp) {
 
         @Provides @AutoExpose(BCGDVTestApp::class) fun app() = app
 
