@@ -3,7 +3,9 @@ package com.chisko.bcgdvtest.ui.main
 import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
-import android.support.v7.widget.Toolbar
+import android.support.v4.content.ContextCompat
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import autodagger.AutoComponent
 import autodagger.AutoExpose
 import autodagger.AutoInjector
@@ -12,6 +14,7 @@ import com.chisko.bcgdvtest.*
 import com.chisko.bcgdvtest.base.BaseActivity
 import com.chisko.bcgdvtest.base.BasePresenter
 import com.chisko.bcgdvtest.model.RestaurantModel
+import com.chisko.bcgdvtest.util.RecyclerDivider
 import dagger.Provides
 import javax.inject.Inject
 
@@ -24,7 +27,7 @@ class MainActivity : BaseActivity(), MainContract.MainActivityView {
     @Inject lateinit var presenter: MainPresenter
     private lateinit var component: MainActivityComponent
 
-    @BindView(R.id.toolbar) internal lateinit var toolbar: Toolbar
+    @BindView(R.id.restaurant_list) internal lateinit var recyclerView: RecyclerView
 
     private lateinit var restaurants: List<RestaurantModel>
 
@@ -50,9 +53,14 @@ class MainActivity : BaseActivity(), MainContract.MainActivityView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setSupportActionBar(toolbar)
-
         restaurants = arrayListOf()
+
+        with(recyclerView) {
+            layoutManager = LinearLayoutManager(context)
+            adapter = RestaurantRecyclerAdapter(arrayListOf())
+        }
+        val dividerDrawable = ContextCompat.getDrawable(this, R.drawable.item_separator)
+        recyclerView.addItemDecoration(RecyclerDivider(dividerDrawable!!))
     }
 
     override fun onStart() {
@@ -64,7 +72,7 @@ class MainActivity : BaseActivity(), MainContract.MainActivityView {
     }
 
     override fun displayRestaurants(data: List<RestaurantModel>) {
-
+        (recyclerView.adapter as RestaurantRecyclerAdapter).updateItems(data)
     }
 
     @dagger.Module

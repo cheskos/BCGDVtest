@@ -1,6 +1,9 @@
 package com.chisko.bcgdvtest.ui.main
 
 import com.chisko.bcgdvtest.base.BasePresenter
+import com.chisko.bcgdvtest.model.RestaurantModel
+import com.chisko.bcgdvtest.util.Utils
+import timber.log.Timber
 
 class MainPresenter(val view: MainContract.MainActivityView,
                     private val dataSource: MainDataSource): BasePresenter(),
@@ -24,8 +27,16 @@ class MainPresenter(val view: MainContract.MainActivityView,
 
     override fun dataLoaded(result: Map<String, String>) {
 
-        val value = result
-//        view.displayRestaurants(result)
+        val list = arrayListOf<RestaurantModel>()
+
+        result.forEach { t, u ->
+            val model = Utils.parseSchedules(t, u)
+            list.add(model)
+        }
+
+        Timber.d("Size of list: ${list.size}")
+
+        view.displayRestaurants(list)
     }
 
     override fun error(cause: Exception) {

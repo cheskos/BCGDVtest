@@ -1,4 +1,4 @@
-package com.chisko.bcgdvtest.model
+package com.chisko.bcgdvtest.util
 
 import java.io.BufferedReader
 import java.io.IOException

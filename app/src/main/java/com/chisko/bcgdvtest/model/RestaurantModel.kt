@@ -2,14 +2,12 @@ package com.chisko.bcgdvtest.model
 
 
 data class RestaurantModel (
-        val name: String,
-        var schedule: String
-) {
-    init {
-        val dates = schedule.split("/")
-        for (value: String in dates) {
+        var name: String,
+        val schedule: String
+): Comparable<WeekDay> {
 
-        }
+    override fun compareTo(other: WeekDay): Int {
+        return compareValuesBy(this, other.value , { it })
     }
 }
 

@@ -2,7 +2,7 @@ package com.chisko.bcgdvtest.ui.main
 
 import android.content.Context
 import com.chisko.bcgdvtest.R
-import com.chisko.bcgdvtest.model.CSVReader
+import com.chisko.bcgdvtest.util.CSVReader
 import org.jetbrains.annotations.NotNull
 import javax.inject.Inject
 

@@ -1,6 +1,5 @@
 package com.chisko.bcgdvtest.ui.main
 
-import com.chisko.bcgdvtest.base.BasePresenter
 import com.chisko.bcgdvtest.base.BaseView
 import com.chisko.bcgdvtest.model.RestaurantModel
 

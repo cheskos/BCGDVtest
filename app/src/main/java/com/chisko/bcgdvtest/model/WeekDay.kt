@@ -1,15 +1,15 @@
 package com.chisko.bcgdvtest.model
 
-enum class WeekDay(name: String) {
-    MONDAY("MON"),
-    TUESDAY("TUE0"),
-    WEDNESDAY("WED"),
-    THURSDAY("THU"),
-    FRIDAY("FRI"),
-    SATURDAY("SAT"),
-    SUNDAY("SUN");
+enum class WeekDay(val value: String) {
+    MONDAY("Mon"),
+    TUESDAY("Tue"),
+    WEDNESDAY("Wed"),
+    THURSDAY("Thu"),
+    FRIDAY("Fri"),
+    SATURDAY("Sat"),
+    SUNDAY("Sun");
 
     override fun toString(): String {
-        return name
+        return value
     }
 }

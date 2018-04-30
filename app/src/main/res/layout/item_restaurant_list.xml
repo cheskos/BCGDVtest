@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/text_margin"
+    android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView   android:id="@+id/item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:layout_gravity="center"
+        tools:text="Name"/>
+
+    <TextView  android:id="@+id/item_hours"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:layout_gravity="center|end"
+        android:textAlignment="viewEnd"
+        tools:text="Mon 8:00 am - 9:00 pm\nTue 8:00 am - 9:00 pm\nWed 8:00 am - 9:00 pm\nThu 8:00 am - 9:00 pm\nFri 8:00 am - 9:00 pm\nSat 8:00 am - 9:00 pm\nSun 8:00 am - 9:00 pm"/>
+
+</LinearLayout>
